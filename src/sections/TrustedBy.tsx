@@ -10,10 +10,12 @@ const logos = [
   "/logos/Untitled-1-04.svg",
   "/logos/Untitled-1-05.svg",
   "/logos/Untitled-1-06.svg",
+  "/logos/CFCB_logo_SVG-02.svg",
+  "/logos/ChatGPT%20Image%20Dec%206,%202025,%2005_11_35%20PM.png",
 ];
 
 // Duplicate logos to ensure seamless loop
-const marqueeLogos = [...logos, ...logos, ...logos];
+const marqueeLogos = [...logos, ...logos];
 
 export default function TrustedBy() {
   return (
@@ -38,12 +40,12 @@ export default function TrustedBy() {
           className="flex gap-16 md:gap-24 min-w-max px-4"
           animate={{ x: "-50%" }}
           transition={{
-            duration: 50,
+            duration: logos.length * 5,
             ease: "linear",
             repeat: Infinity,
           }}
         >
-          {[...marqueeLogos, ...marqueeLogos].map((logo, index) => (
+          {marqueeLogos.map((logo, index) => (
             <div
               key={index}
               className="relative w-32 h-16 md:w-40 md:h-20 flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 group"

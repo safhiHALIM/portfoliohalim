@@ -2,6 +2,7 @@
 
 import { Canvas } from "@react-three/fiber";
 import { Stars, Sparkles } from "@react-three/drei";
+import { useState, useEffect } from "react";
 
 function BackgroundParticles() {
   return (
@@ -13,6 +14,19 @@ function BackgroundParticles() {
 }
 
 export default function StarryBackground() {
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    const checkTouch = () => {
+      setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    };
+    checkTouch();
+  }, []);
+
+  if (isTouchDevice) {
+    return null;
+  }
+
   return (
     <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
       <Canvas camera={{ position: [0, 0, 1] }}>

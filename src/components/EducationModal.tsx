@@ -29,7 +29,7 @@ export default function EducationModal({ isOpen, onClose }: EducationModalProps)
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
           >
-            <div className="bg-gradient-to-br from-[#0a0a0a] via-[#0f0f1e] to-[#0a0a0a] border border-white/10 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden pointer-events-auto shadow-2xl relative">
+            <div data-lenis-prevent className="bg-gradient-to-br from-[#0a0a0a] via-[#0f0f1e] to-[#0a0a0a] border border-white/10 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-scroll overflow-x-hidden pointer-events-auto shadow-2xl relative">
               {/* Background gradient accent */}
               <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-blue-500/10 to-transparent pointer-events-none" />
               {/* Close Button */}

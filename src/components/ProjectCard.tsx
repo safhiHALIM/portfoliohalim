@@ -26,23 +26,14 @@ export default function ProjectCard({ title, description, tags, image, liveUrl }
       {/* Image Section - Takes remaining space */}
       <div className="relative flex-1 overflow-hidden bg-black/50">
         <div className="w-full h-full overflow-hidden relative">
-          {liveUrl ? (
-            <iframe 
-              src={liveUrl} 
-              className="w-[200%] h-[200%] border-0 transform scale-50 origin-top-left pointer-events-none"
-              title={title}
-              loading="lazy"
-            />
-          ) : (
-            <div 
-              className="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
-              style={{ backgroundImage: `url(${image})` }}
-            >
-               <div className="w-full h-full flex items-center justify-center bg-black/30">
-                 <span className="text-4xl">🖥️</span>
-               </div>
-            </div>
-          )}
+          <div 
+            className="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
+            style={{ backgroundImage: `url(${image})` }}
+          >
+             <div className="w-full h-full flex items-center justify-center bg-black/30">
+               <span className="text-4xl">🖥️</span>
+             </div>
+          </div>
         </div>
 
         {/* Action Icon */}

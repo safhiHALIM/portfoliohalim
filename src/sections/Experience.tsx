@@ -76,14 +76,14 @@ export default function Experience() {
           <AnimatedTitle text="Experience & Clients" className="text-4xl md:text-6xl font-bold text-white" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16">
           {/* Experience Timeline */}
           <div>
             <h3 className="text-2xl font-bold mb-8 text-blue-400 flex items-center gap-2">
               <span className="w-2 h-8 bg-blue-500 rounded-full inline-block"></span>
               Career History
             </h3>
-            <div className="space-y-12 border-l-2 border-white/10 pl-8 ml-4">
+            <div className="space-y-12 border-l-2 border-white/10 pl-6 ml-2 md:pl-8 md:ml-4">
               {experiences.map((exp, index) => (
                 <motion.div 
                   key={index}
@@ -139,7 +139,7 @@ export default function Experience() {
                 View Full Profile
               </button>
             </h3>
-            <div className="space-y-12 border-l-2 border-white/10 pl-8 ml-4">
+            <div className="space-y-12 border-l-2 border-white/10 pl-6 ml-2 md:pl-8 md:ml-4">
               {education.map((edu, index) => (
                 <motion.div 
                   key={index}
@@ -163,7 +163,7 @@ export default function Experience() {
                 <span className="w-2 h-8 bg-yellow-500 rounded-full inline-block"></span>
                 Self-Taught Skills
             </h3>
-            <div className="space-y-12 border-l-2 border-white/10 pl-8 ml-4">
+            <div className="space-y-12 border-l-2 border-white/10 pl-6 ml-2 md:pl-8 md:ml-4">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
