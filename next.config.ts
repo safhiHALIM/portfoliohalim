@@ -1,8 +1,12 @@
 import type { NextConfig } from "next";
 
+const isGithubActions = process.env.GITHUB_ACTIONS === "true";
+
 const nextConfig: NextConfig = {
-  basePath: process.env.NODE_ENV === "production" ? "/portefolio" : "",
-  output: "export",
+  // Use basePath only for GitHub Pages
+  basePath: isGithubActions ? "/portefolio" : "",
+  // Use static export only for GitHub Pages; Vercel handles standard builds better
+  output: isGithubActions ? "export" : undefined,
   images: {
     unoptimized: true,
   },

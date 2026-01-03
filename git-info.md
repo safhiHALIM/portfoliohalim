@@ -1,10 +1,24 @@
-# Deploying Your Next.js Project to GitHub Pages
+# Deployment Guide
 
-Deploying a Next.js application to GitHub Pages requires a few specific configuration steps. Since GitHub Pages is designed for static sites, you'll need to use Next.js's static export feature. This will generate a collection of HTML, CSS, and JavaScript files that can be hosted directly.
+You can deploy this project to **GitHub Pages** or **Vercel**.
 
-Here's a step-by-step guide to deploying your project:
+---
 
-## 1. Configure Your Project for Static Export
+## Option 1: Deploy to Vercel (Recommended)
+
+Vercel is the easiest way to deploy Next.js apps.
+
+1.  Push your code to a GitHub repository.
+2.  Go to [Vercel](https://vercel.com/new).
+3.  Import your repository.
+4.  Vercel will automatically detect Next.js and configure the build settings.
+5.  Click **Deploy**.
+
+**Note:** The `next.config.ts` is configured to automatically detect Vercel and skip the `basePath` prefix, so your site will be available at the root of your domain.
+
+---
+
+## Option 2: Deploy to GitHub Pages
 
 You need to tell Next.js to output a static version of your site.
 
