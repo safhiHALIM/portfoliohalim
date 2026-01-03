@@ -1,6 +1,7 @@
 {
   "name": "portfolio-app",
   "version": "0.1.0",
+  "author": "neosafi",
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -10,7 +10,7 @@ const experiences = [
   {
     company: "Freelance",
     role: "Full Stack Web Developer",
-    period: "Jan 2023 - Present",
+    period: "Jan 2021 - Present",
     description: "Developed web applications using Node.js, Python, Express, and MongoDB. Specialized in scalable backend solutions."
   },
   {
@@ -26,16 +26,16 @@ const experiences = [
     description: "Specialized in NFT ecosystem development and blockchain technologies."
   },
   {
+    company: "ECA-Assurances",
+    role: "Frontend Developer",
+    period: "Jul 2022",
+    description: "Developed web solutions using JavaScript and modern web technologies."
+  },
+  {
     company: "AXA Assurance Maroc",
     role: "Software Developer",
     period: "Jan 2020 - Mar 2020",
     description: "Built desktop application for managing client contacts using C# and Entity Framework. Implemented efficient database solutions with SQL Server."
-  },
-  {
-    company: "ECA-Assurances",
-    role: "Desktop Developer",
-    period: "Jul 2022",
-    description: "Developed web solutions using JavaScript and modern web technologies."
   }
 ];
 

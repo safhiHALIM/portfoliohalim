@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Instagram } from "lucide-react";
 
 export const professionalProfile = [
   "I’m an **experienced software developer** passionate about programming and building **smart, user-centric solutions**. I specialize in *Microsoft technologies* with strong expertise in **C#, C, and SQL Server**, but I also thrive in **full-stack web development**—crafting everything from backend APIs to engaging frontend interfaces.",
@@ -15,8 +15,8 @@ export const timelineData = [
   { year: "2017-2020", title: "Specialized Technician in IT Development", description: "Specialized Institute of Applied Technology (ISTA) - Cité de l'Air." },
   { year: "2020", title: "Software Developer", description: "Desktop application development at AXA Assurance Maroc using C# and .NET frameworks." },
   { year: "2021-Present", title: "Self-Education", description: "MERN stack, Selenium, Scripting, Blockchain studies, and Prompt Engineering." },
-  { year: "Jul 2022", title: "Desktop Developer", description: "Developed web solutions using JavaScript and modern web technologies at ECA-Assurances." },
-  { year: "2023-Present", title: "Freelance Web Developer", description: "Developing web applications using Node.js, Python, Express, and MongoDB. Specialized in scalable backend solutions." },
+  { year: "Jul 2022", title: "Frontend Developer", description: "Developed web solutions using JavaScript and modern web technologies at ECA-Assurances." },
+  { year: "2021-Present", title: "Freelance Web Developer", description: "Developing web applications using Node.js, Python, Express, and MongoDB. Specialized in scalable backend solutions." },
   { year: "2023", title: "GED & Document Management Specialist", description: "Expertise in document management systems and DMS solutions at NATC FMCG." },
 ].sort((a, b) => {
   const yearA = parseInt(a.year.split('-')[0]) || parseInt(a.year.split(' ')[1]) || 0;
@@ -27,7 +27,7 @@ export const timelineData = [
 export const socialLinks = [
   { icon: Github, label: "GitHub", url: "https://github.com/safhiHALIM" },
   { icon: Linkedin, label: "LinkedIn", url: "https://www.linkedin.com/in/abdelhalim-safhi-600583263/" },
-  { icon: Twitter, label: "Twitter", url: "https://twitter.com" },
+  { icon: Instagram, label: "Instagram", url: "https://www.instagram.com/halim_safhi/" },
 ];
 
 export const aboutMe = {

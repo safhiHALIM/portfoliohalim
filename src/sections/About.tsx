@@ -40,10 +40,10 @@ export default function About() {
       <div className="container mx-auto px-4 relative z-10">
         <motion.div 
           style={{ opacity, scale }}
-          className="grid lg:grid-cols-2 gap-16 items-center"
+          className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
         >
           {/* Left Column: Text Content */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8 order-2 lg:order-1">
             <div className="space-y-4">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -61,11 +61,11 @@ export default function About() {
               
               <AnimatedTitle 
                 text="Crafting Digital Excellence" 
-                className="text-4xl md:text-6xl font-bold text-white leading-tight"
+                className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight"
               />
             </div>
 
-            <div className="space-y-6 text-gray-400 leading-relaxed">
+            <div className="space-y-4 text-gray-400 leading-relaxed text-left break-words">
               {professionalProfile.map((paragraph, index) => (
                 <motion.p
                   key={index}
@@ -73,7 +73,7 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-lg md:text-xl"
+                  className="text-sm sm:text-base md:text-lg lg:text-xl px-1 sm:px-0"
                 >
                   <StyledText text={paragraph} />
                 </motion.p>
@@ -98,54 +98,51 @@ export default function About() {
             </motion.div>
           </div>
 
-          {/* Right Column: Advanced Avatar Display */}
-          <div className="relative group lg:order-last order-first mb-12 lg:mb-0">
+          {/* Right Column: Avatar Display */}
+          <div className="relative group order-1 lg:order-2 mb-12 lg:mb-0">
             <motion.div
               style={{ y: isLargeScreen ? y : 0 }}
-              className="relative aspect-[4/5] w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[550px] mx-auto"
+              className="relative w-full max-w-[260px] xs:max-w-[320px] sm:max-w-[400px] lg:max-w-[500px] mx-auto flex flex-col items-center"
             >
-              {/* Decorative Rings */}
-              <div className="absolute inset-0 rounded-[2rem] border-2 border-blue-500/20 animate-[spin_20s_linear_infinite]" />
-              <div className="absolute inset-4 rounded-[1.5rem] border border-purple-500/20 animate-[spin_15s_linear_infinite_reverse]" />
+              {/* Decorative Rings - Same background animation */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[260px] h-[260px] xs:w-[320px] xs:h-[320px] sm:w-[400px] sm:h-[400px] lg:w-[480px] lg:h-[480px]">
+                <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 animate-[spin_20s_linear_infinite]" />
+                <div className="absolute inset-4 rounded-full border border-purple-500/20 animate-[spin_15s_linear_infinite_reverse]" />
+              </div>
               
-              {/* Main Container */}
-              <div className="absolute inset-8 rounded-3xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-2xl border border-white/10 overflow-hidden group-hover:border-blue-500/50 transition-all duration-700 shadow-2xl flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none" />
-                
-                {/* Avatar Image Container */}
-                <div className="flex-1 relative overflow-hidden">
-                  <motion.img
-                    src={aboutMe.avatar}
-                    alt="Avatar"
-                    className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700 ease-out"
-                  />
-                </div>
+              {/* Avatar Image - Without frame */}
+              <div className="relative w-44 h-44 xs:w-56 xs:h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden z-10 mb-8 border-4 border-white/10 group-hover:border-blue-500/50 transition-all duration-700 shadow-2xl">
+                <motion.img
+                  src={aboutMe.avatar}
+                  alt="Avatar"
+                  className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700 ease-out"
+                />
+              </div>
 
-                {/* Social Bar - Integrated inside the frame */}
-                <div className="h-24 bg-black/40 backdrop-blur-md border-t border-white/10 flex items-center justify-center gap-6 z-20 relative px-4">
-                  {socialLinks.map((social, index) => {
-                    const Icon = social.icon;
-                    return (
-                      <motion.a
-                        key={index}
-                        href={social.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.2, y: -5 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="p-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300"
-                        aria-label={social.label}
-                      >
-                        <Icon size={22} />
-                      </motion.a>
-                    );
-                  })}
-                </div>
+              {/* Social Bar - Positioned below the avatar */}
+              <div className="flex items-center justify-center gap-6 z-20 relative">
+                {socialLinks.map((social, index) => {
+                  const Icon = social.icon;
+                  return (
+                    <motion.a
+                      key={index}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.2, y: -5 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="p-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300"
+                      aria-label={social.label}
+                    >
+                      <Icon size={22} />
+                    </motion.a>
+                  );
+                })}
               </div>
 
               {/* Glowing Accents */}
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl group-hover:bg-blue-500/40 transition-all duration-700 animate-subtle-pulse-blue" />
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl group-hover:bg-purple-500/40 transition-all duration-700 animate-subtle-pulse-purple" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl group-hover:bg-blue-500/40 transition-all duration-700 animate-subtle-pulse-blue -z-10" />
+              <div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl group-hover:bg-purple-500/40 transition-all duration-700 animate-subtle-pulse-purple -z-10" />
             </motion.div>
           </div>
         </motion.div>

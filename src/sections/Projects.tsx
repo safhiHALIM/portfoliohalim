@@ -11,29 +11,29 @@ const projects = [
     title: "Brand Landing Page",
     description: "High-conversion landing page featuring modern CSS animations, responsive design, and engaging user interactions.",
     tags: ["React", "CSS", "Design"],
-    image: "/project3.jpg",
+    image: "https://s0.wp.com/mshots/v1/https%3A%2F%2FsafhiHALIM.github.io%2FbrandLandingPage%2F?w=800",
     liveUrl: "https://safhiHALIM.github.io/brandLandingPage/"
   },
   {
     title: "Neo-Safi",
     description: "Personal digital space and portfolio core architecture, demonstrating modern frontend practices with advanced animations.",
     tags: ["Next.js", "React", "Three.js"],
-    image: "/project1.jpg",
+    image: "https://s0.wp.com/mshots/v1/https%3A%2F%2FsafhiHALIM.github.io%2FNeo-Safi%2F?w=800",
     liveUrl: "https://safhiHALIM.github.io/Neo-Safi/"
   },
   {
     title: "Personal Portfolio",
     description: "Modern responsive portfolio showcasing projects, experience, and technical expertise with smooth animations and interactive components.",
     tags: ["Next.js", "React", "Framer Motion"],
-    image: "/project5.jpg",
+    image: "https://s0.wp.com/mshots/v1/https%3A%2F%2FsafhiHALIM.github.io%2Fportfolio%2F?w=800",
     liveUrl: "https://safhiHALIM.github.io/portfolio/"
   },
   {
     title: "Demo 01",
     description: "Interactive web application demonstrating modern web development techniques and responsive design patterns.",
     tags: ["HTML", "CSS", "JavaScript"],
-    image: "/project6.jpg",
-    liveUrl: "https://safhihalim.github.io/demo01/"
+    image: "https://s0.wp.com/mshots/v1/https%3A%2F%2FsafhiHALIM.github.io%2Fdemo01%2F?w=800",
+    liveUrl: "https://safhiHALIM.github.io/demo01/"
   }
 ];
 

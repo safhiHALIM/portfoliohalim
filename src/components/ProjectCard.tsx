@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { useState } from "react";
+import ProjectPreviewModal from "./ProjectPreviewModal";
 
 interface ProjectProps {
   title: string;
@@ -12,28 +14,40 @@ interface ProjectProps {
 }
 
 export default function ProjectCard({ title, description, tags, image, liveUrl }: ProjectProps) {
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+
   const handleCardClick = () => {
-    if (liveUrl) {
-      window.open(liveUrl, "_blank");
+    if (liveUrl && liveUrl !== "#") {
+      setIsPreviewOpen(true);
     }
   };
+
+  const isGithubActions = typeof window !== 'undefined' && window.location.hostname.includes('github.io');
+  const basePath = isGithubActions ? '/portfoliohalim' : '';
+  const fullImagePath = image.startsWith('http') ? image : `${basePath}${image}`;
 
   return (
     <motion.div
       onClick={handleCardClick}
       className="relative aspect-square w-full rounded-xl bg-gradient-to-br from-white/10 to-white/5 border-2 border-white/20 overflow-hidden cursor-pointer group shadow-2xl shadow-white/10 flex flex-col"
     >
+      {/* Modal */}
+      {liveUrl && (
+        <ProjectPreviewModal 
+          isOpen={isPreviewOpen} 
+          onClose={() => setIsPreviewOpen(false)} 
+          url={liveUrl} 
+          title={title} 
+        />
+      )}
+      
       {/* Image Section - Takes remaining space */}
       <div className="relative flex-1 overflow-hidden bg-black/50">
         <div className="w-full h-full overflow-hidden relative">
           <div 
             className="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
-            style={{ backgroundImage: `url(${image})` }}
-          >
-             <div className="w-full h-full flex items-center justify-center bg-black/30">
-               <span className="text-4xl">🖥️</span>
-             </div>
-          </div>
+            style={{ backgroundImage: `url(${fullImagePath})` }}
+          />
         </div>
 
         {/* Action Icon */}

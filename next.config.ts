@@ -4,7 +4,7 @@ const isGithubActions = process.env.GITHUB_ACTIONS === "true";
 
 const nextConfig: NextConfig = {
   // Use basePath only for GitHub Pages
-  basePath: isGithubActions ? "/portefolio" : "",
+  basePath: isGithubActions ? "/portfoliohalim" : "",
   // Use static export only for GitHub Pages; Vercel handles standard builds better
   output: isGithubActions ? "export" : undefined,
   images: {

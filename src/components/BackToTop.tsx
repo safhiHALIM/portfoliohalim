@@ -35,11 +35,13 @@ export default function BackToTop() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
+          whileHover={{ scale: 1.1, translateY: -5 }}
+          whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          
+          className="fixed bottom-8 right-8 z-50 p-4 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/20 backdrop-blur-md border border-white/20 cursor-pointer group hover:shadow-blue-500/40 transition-all duration-300"
           aria-label="Back to top"
         >
-          <ArrowUp size={24}  />
+          <ArrowUp size={24} className="group-hover:animate-bounce" />
         </motion.button>
       )}
     </AnimatePresence>
