@@ -45,8 +45,19 @@ body {
   
   body.custom-cursor-active a,
   body.custom-cursor-active button,
-  body.custom-cursor-active [role="button"] {
+  body.custom-cursor-active [role="button"],
+  body.custom-cursor-active .cursor-pointer {
     cursor: none !important;
+  }
+}
+
+.custom-cursor-container {
+  display: none;
+}
+
+@media (pointer: fine) {
+  .custom-cursor-container {
+    display: block;
   }
 }
 
