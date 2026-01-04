@@ -60,8 +60,8 @@ export default function About() {
               </motion.div>
               
               <AnimatedTitle 
-                text="Crafting Digital Excellence" 
-                className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight"
+                text="CraftingDigitalExcellence" 
+                className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight whitespace-nowrap"
               />
             </div>
 
@@ -102,16 +102,16 @@ export default function About() {
           <div className="relative group order-1 lg:order-2 mb-12 lg:mb-0">
             <motion.div
               style={{ y: isLargeScreen ? y : 0 }}
-              className="relative w-full max-w-[260px] xs:max-w-[320px] sm:max-w-[400px] lg:max-w-[500px] mx-auto flex flex-col items-center"
+              className="relative w-full max-w-[300px] xs:max-w-[380px] sm:max-w-[480px] lg:max-w-[600px] mx-auto flex flex-col items-center"
             >
               {/* Decorative Rings - Same background animation */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[260px] h-[260px] xs:w-[320px] xs:h-[320px] sm:w-[400px] sm:h-[400px] lg:w-[480px] lg:h-[480px]">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] xs:w-[380px] xs:h-[380px] sm:w-[480px] sm:h-[480px] lg:w-[580px] lg:h-[580px]">
                 <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 animate-[spin_20s_linear_infinite]" />
                 <div className="absolute inset-4 rounded-full border border-purple-500/20 animate-[spin_15s_linear_infinite_reverse]" />
               </div>
               
               {/* Avatar Image - Without frame */}
-              <div className="relative w-44 h-44 xs:w-56 xs:h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden z-10 mb-8 border-4 border-white/10 group-hover:border-blue-500/50 transition-all duration-700 shadow-2xl">
+              <div className="relative w-52 h-52 xs:w-64 xs:h-64 sm:w-80 sm:h-80 lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden z-10 mb-8 border-4 border-white/10 group-hover:border-blue-500/50 transition-all duration-700 shadow-2xl">
                 <motion.img
                   src={aboutMe.avatar}
                   alt="Avatar"

@@ -14,6 +14,22 @@ export default function Contact() {
     setIsSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
+    
+    // Collect visitor metadata
+    const metadata = {
+      browser: navigator.userAgent,
+      language: navigator.language,
+      platform: navigator.platform,
+      screenResolution: `${window.screen.width}x${window.screen.height}`,
+      timestamp: new Date().toLocaleString(),
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    };
+
+    // Append metadata to form data
+    Object.entries(metadata).forEach(([key, value]) => {
+      formData.append(`visitor_${key}`, value);
+    });
+
     // Using FormSubmit.co as it's easier to set up without an API key initially
     const email = "halimsf@outlook.fr";
 
@@ -21,10 +37,9 @@ export default function Contact() {
       const response = await fetch(`https://formsubmit.co/ajax/${email}`, {
         method: "POST",
         headers: { 
-            'Content-Type': 'application/json',
             'Accept': 'application/json'
         },
-        body: JSON.stringify(Object.fromEntries(formData))
+        body: formData
       });
 
       const data = await response.json();
@@ -70,7 +85,7 @@ export default function Contact() {
           ) : (
             <>
               <div className="text-center mb-10">
-                <AnimatedTitle text="Let's Work Together" className="text-4xl font-bold mb-2 text-white" />
+                <AnimatedTitle text="Let'sWorkTogether" className="text-4xl font-bold mb-2 text-white whitespace-nowrap flex justify-center" />
                 <p className="text-gray-400 mt-4">Have a project in mind? I&apos;d love to hear from you.</p>
               </div>
 
