@@ -1,7 +1,45 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Code2, Database, Globe, Layers, Workflow, Zap, Shield, Target } from "lucide-react";
+import { 
+  X, Code2, Database, Globe, Layers, Workflow, Zap, Shield, Target,
+  Briefcase, Building2, Calculator, Clock, Search, FileText, Users, 
+  Monitor, Terminal, Code, MousePointer2, Box, Cpu, Languages, 
+  Headphones, Laptop, Layout, Network, Server, Image, Rocket, 
+  ListTodo, GraduationCap, UserCheck
+} from "lucide-react";
+
+const modules = [
+  { id: 1, title: "Métier et formation", icon: Briefcase },
+  { id: 2, title: "L’entreprise et son environnement", icon: Building2 },
+  { id: 3, title: "Notions de mathématiques appliquées à l’informatique", icon: Calculator },
+  { id: 4, title: "Gestion du temps", icon: Clock },
+  { id: 5, title: "Veille technologique", icon: Search },
+  { id: 6, title: "Production de documents", icon: FileText },
+  { id: 7, title: "Communication interpersonnelle", icon: Users },
+  { id: 8, title: "Logiciels d’application", icon: Monitor },
+  { id: 9, title: "Techniques de programmation structurée", icon: Terminal },
+  { id: 10, title: "Langage de programmation structurée", icon: Code },
+  { id: 11, title: "Programmation événementielle", icon: MousePointer2 },
+  { id: 12, title: "Programmation orientée objet", icon: Box },
+  { id: 13, title: "Conception et modélisation d’un système d’information", icon: Layout },
+  { id: 14, title: "Installation d’un poste informatique", icon: Cpu },
+  { id: 15, title: "Communication en anglais dans un contexte de travail", icon: Languages },
+  { id: 16, title: "Assistance technique à la clientèle", icon: Headphones },
+  { id: 17, title: "Système de gestion de bases de données I", icon: Database },
+  { id: 18, title: "Soutien technique en milieu de travail (Stage I)", icon: Laptop },
+  { id: 19, title: "Analyse et conception orientée objet", icon: Workflow },
+  { id: 20, title: "Introduction aux réseaux informatiques", icon: Network },
+  { id: 21, title: "Système de gestion de bases de données II", icon: Database },
+  { id: 22, title: "Programmation Client-serveur", icon: Server },
+  { id: 23, title: "Applications hypermédias", icon: Image },
+  { id: 24, title: "Programmation de sites Web dynamiques", icon: Globe },
+  { id: 25, title: "Déploiement d’applications", icon: Rocket },
+  { id: 26, title: "Initiation à la gestion de projets informatiques", icon: ListTodo },
+  { id: 27, title: "Projet de conception de fin de formation", icon: GraduationCap },
+  { id: 28, title: "Recherche d’emploi", icon: Search },
+  { id: 29, title: "Intégration au milieu du travail", icon: UserCheck },
+];
 
 interface EducationModalProps {
   isOpen: boolean;
@@ -83,6 +121,7 @@ export default function EducationModal({ isOpen, onClose }: EducationModalProps)
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
+                  className="mb-16"
                 >
                   <h3 className="text-3xl font-bold text-white mb-10 flex items-center gap-3">
                     <span className="w-1 h-10 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></span>
@@ -179,6 +218,38 @@ export default function EducationModal({ isOpen, onClose }: EducationModalProps)
                         <li className="flex items-center gap-2"><span className="w-2 h-2 bg-red-500 rounded-full"></span>Event-Driven Arch.</li>
                       </ul>
                     </motion.div>
+                  </div>
+                </motion.div>
+
+                {/* Training Modules Section */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <h3 className="text-3xl font-bold text-white mb-10 flex items-center gap-3">
+                    <span className="w-1 h-10 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></span>
+                    Modules de Formation
+                  </h3>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {modules.map((module) => (
+                      <motion.div
+                        key={module.id}
+                        whileHover={{ scale: 1.02, x: 5 }}
+                        className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all group"
+                      >
+                        <div className="p-2.5 rounded-lg bg-gradient-to-br from-gray-800 to-gray-900 text-gray-400 group-hover:text-blue-400 transition-colors shadow-lg">
+                          <module.icon size={20} />
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-xs text-gray-500 font-mono">Module {module.id}</span>
+                          <span className="text-sm text-gray-300 font-medium group-hover:text-white transition-colors">
+                            {module.title}
+                          </span>
+                        </div>
+                      </motion.div>
+                    ))}
                   </div>
                 </motion.div>
               </div>
